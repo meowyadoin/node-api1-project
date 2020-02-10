@@ -8,6 +8,11 @@ const server = express();
 
 server.use(express.json());
 
+server.get ('/', (req, res) => {
+    res.json({hello: 'monday project'})
+})
+
+
 // GET users "/api/users"
 server.get("/api/users", (req, res) => {
     Users.find()
@@ -48,7 +53,6 @@ server.get("/api/users/:id", (req, res) => {
             });
     })
 })
-
 
 // POST users "/api/users"
 server.post("/api/users", (req, res) => {
